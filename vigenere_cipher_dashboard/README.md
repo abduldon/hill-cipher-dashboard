@@ -34,16 +34,6 @@ Rows are separated by semicolons and values by commas. Example 2×2: `3, 3; 2, 5
 
 The determinant must be coprime to 26 (`gcd(det(K), 26) = 1`) so its modular inverse exists. Encryption pads the final incomplete block with `X`; the padding is shown in the result and must be handled by the user when interpreting plaintext.
 
-## Deploy on Render
-1. Push the project contents to GitHub.
-2. In Render, create a Python Web Service from the repository.
-3. If the project is in a nested folder, set **Root Directory** to that folder (for example `vigenere_cipher_dashboard`).
-4. Build command: `pip install -r requirements.txt`
-5. Start command: `gunicorn app:app`
-6. Set `SECRET_KEY` and `ADMIN_PASSWORD` in Render Environment settings.
-7. Deploy and test login, both matrix sizes, encryption/decryption, history and stats.
-
-SQLite on an ephemeral host filesystem may not persist across restarts or deploys. For persistent hosted history, configure a persistent disk or migrate `DATABASE_URL` to managed PostgreSQL before relying on the history feature.
 
 ## Security note
 The Hill Cipher is historical and not secure for real data. Use this project for educational demonstrations only.
